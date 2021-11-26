@@ -2,11 +2,11 @@ ARG BOOTSTRAP_SOURCE=ghcr.io/void-linux/docker-bootstrap
 ARG BOOTSTRAP_VERSION=latest
 FROM ${BOOTSTRAP_SOURCE}:${BOOTSTRAP_VERSION} as build
 COPY keys/* /target/var/db/xbps/keys/
-ARG REPOSITORY=https://repo-us.voidlinux.org
+ARG REPOSITORY=https://repo-de.voidlinux.org
 ARG ARCH=aarch64
 RUN XBPS_ARCH=${ARCH} xbps-install -yMUS \
-        --repository=${REPOSITORY}/current \
-        --repository=${REPOSITORY}/current/musl \
+        --repository=${REPOSITORY}/current/aarch64 \
+        --repository=${REPOSITORY}/current/aarch64/musl \
         -r /target \
         base-minimal
 
