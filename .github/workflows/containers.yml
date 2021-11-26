@@ -20,6 +20,8 @@ jobs:
           - mini
           - mini-bb
         arch:
+          - aarch64
+          - aarch64-musl
           - x86_64
           - x86_64-musl
     steps:
