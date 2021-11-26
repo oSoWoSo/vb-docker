@@ -3,7 +3,7 @@ ARG BOOTSTRAP_VERSION=latest
 FROM ${BOOTSTRAP_SOURCE}:${BOOTSTRAP_VERSION} as build
 COPY keys/* /target/var/db/xbps/keys/
 ARG REPOSITORY=https://repo-us.voidlinux.org
-ARG ARCH=x86_64
+ARG ARCH=aarch64
 RUN XBPS_ARCH=${ARCH} xbps-install -yMUS \
         --repository=${REPOSITORY}/current \
         --repository=${REPOSITORY}/current/musl \
